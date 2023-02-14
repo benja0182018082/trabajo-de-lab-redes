@@ -1,0 +1,145 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<header>
+			<nav id="navlab">
+				<div id="logo">
+					<img src="/ah.png" alt="logo" class="logo" />
+				</div>
+				<div class="flex items-center justify-center min-h-screen">
+					<ul
+						class="mx-auto grid max-w-full w-full grid-cols-3 gap-x-5 px-8"
+					>
+						<li class="">
+							<input
+								class="peer sr-only"
+								type="radio"
+								value="yes"
+								name="answer"
+								id="yes"
+								checked
+							/>
+							<label
+								class="flex justify-center cursor-pointer rounded-full border border-gray-300 bg-white py-2 px-4 hover:bg-gray-50 focus:outline-none peer-checked:border-transparent peer-checked:ring-2 peer-checked:ring-indigo-500 transition-all duration-500 ease-in-out"
+								for="yes">info</label
+							>
+
+							<div
+								class="absolute bg-white shadow-lg left-0 p-6 border mt-2 border-indigo-300 rounded-lg w-[97vw] mx-auto transition-all duration-500 ease-in-out translate-x-40 opacity-0 invisible peer-checked:opacity-100 peer-checked:visible peer-checked:translate-x-1"
+							>
+								_
+							</div>
+						</li>
+
+						<li class="">
+							<input
+								class="peer sr-only"
+								type="radio"
+								value="no"
+								name="answer"
+								id="no"
+							/>
+							<label
+								class="flex justify-center cursor-pointer rounded-full border border-gray-300 bg-white py-2 px-4 hover:bg-gray-50 focus:outline-none peer-checked:border-transparent peer-checked:ring-2 peer-checked:ring-indigo-500 transition-all duration-500 ease-in-out"
+								for="no">contactos</label
+							>
+							_
+							<div
+								class="absolute bg-white shadow-lg left-0 p-6 border mt-2 border-indigo-300 rounded-lg w-[97vw] mx-auto transition-all duration-500 ease-in-out translate-x-40 opacity-0 invisible peer-checked:opacity-100 peer-checked:visible peer-checked:translate-x-1"
+							>
+							</div>
+						</li>
+
+						<li class="">
+							<input
+								class="peer sr-only"
+								type="radio"
+								value="yesno"
+								name="answer"
+								id="yesno"
+							/>
+							<label
+								class="flex justify-center cursor-pointer rounded-full border border-gray-300 bg-white py-2 px-4 hover:bg-gray-50 focus:outline-none peer-checked:border-transparent peer-checked:ring-2 peer-checked:ring-indigo-500 transition-all duration-500 ease-in-out"
+								for="yesno"></label>
+
+							<div
+								class="absolute bg-white shadow-lg left-0 p-6 border mt-2 border-indigo-300 rounded-lg w-[97vw] mx-auto transition-all duration-500 ease-in-out translate-x-40 opacity-0 invisible peer-checked:opacity-100 peer-checked:visible peer-checked:translate-x-1"
+							>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div id="menu">
+					<div>
+						<button class="relative group">
+							<div
+								class="relative flex overflow-hidden items-center justify-center rounded-full w-[50px] h-[50px] transform transition-all bg-slate-700 ring-0 ring-gray-300 hover:ring-8 group-focus:ring-4 ring-opacity-30 duration-200 shadow-md"
+							>
+								<div
+									class="flex flex-col justify-between w-[20px] h-[20px] transform transition-all duration-300 origin-center overflow-hidden"
+								>
+									<div
+										class="bg-white h-[2px] w-7 transform transition-all duration-300 origin-left group-focus:translate-y-6 delay-100"
+									>
+									</div>
+									<div
+										class="bg-white h-[2px] w-7 rounded transform transition-all duration-300 group-focus:translate-y-6 delay-75"
+									>
+									</div>
+									<div
+										class="bg-white h-[2px] w-7 transform transition-all duration-300 origin-left group-focus:translate-y-6"
+									>
+									</div>
+
+									<div
+										class="absolute items-center justify-between transform transition-all duration-500 top-2.5 -translate-x-10 group-focus:translate-x-0 flex w-0 group-focus:w-12"
+									>
+										<div
+											class="absolute bg-white h-[2px] w-5 transform transition-all duration-500 rotate-0 delay-300 group-focus:rotate-45"
+										>
+										</div>
+										<div
+											class="absolute bg-white h-[2px] w-5 transform transition-all duration-500 -rotate-0 delay-300 group-focus:-rotate-45"
+										>
+										</div>
+									</div>
+								</div>
+							</div>
+						</button>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<slot />
+	</body>
+</html>
+<style>
+	@media (min-width: 640px) {
+		{
+		}
+	}
+	.logo {
+		width: 100px;
+		height: auto;
+	}
+	#navlab {
+		display: flex;
+		justify-content: space-between;
+		margin: 20px;
+	}
+</style>
